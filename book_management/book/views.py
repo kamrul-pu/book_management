@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.db.models import Q
 from book.models import Book
 from book.serializers import BookSerializer
@@ -21,13 +20,6 @@ class BookDetail(RetrieveUpdateDestroyAPIView):
     serializer_class = BookSerializer
     queryset = Book.objects.filter()
     lookup_field = "uid"
-
-
-from rest_framework import generics
-
-# from django_filters.rest_framework import DjangoFilterBackend
-from .models import Book
-from .serializers import BookSerializer
 
 
 class BookSearchView(ListAPIView):
